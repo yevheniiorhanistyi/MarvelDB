@@ -23,12 +23,14 @@ class MarvelService {
     }
 
     _transformCharacter = (char) => {
+        const altDescription = 'There should be a short description of the character here, but unfortunately not yet...';
+
         return {
-            name: char.name,
+            name: char.name.length > 22 ? char.name.slice(0, 20) + '...' : char.name,
             description: char.description ?
                 char.description.length > 230 ?
-                    char.description.slice(0, 230) + '...' :
-                    char.description : 'There is no description of the character yet...',
+                    char.description.slice(0, 210) + '...' :
+                    char.description : altDescription,
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
             homepage: char.urls[0].url,
             wiki: char.urls[1].url
