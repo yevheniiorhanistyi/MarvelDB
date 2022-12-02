@@ -26,7 +26,8 @@ class MarvelService {
         const altDescription = 'There should be a short description of the character here, but unfortunately not yet...';
 
         return {
-            name: char.name.length > 22 ? char.name.slice(0, 20) + '...' : char.name,
+            id: char.id,
+            name: char.name,
             description: char.description ?
                 char.description.length > 230 ?
                     char.description.slice(0, 210) + '...' :
