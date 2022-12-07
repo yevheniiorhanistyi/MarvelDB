@@ -130,8 +130,8 @@ const View = ({ char }) => {
     )
 }
 
-// CharInfo.protoTypes = {
-//     charId: PropTypes.string
-// }
+CharInfo.propTypes = {
+    charId: PropTypes.number
+}
 
 export default CharInfo;
