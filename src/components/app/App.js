@@ -15,25 +15,25 @@ const App = () => {
         setChar(id);
     }
 
-        return (
-            <div className="app">
-                <AppHeader />
-                <main>
+    return (
+        <div className="app">
+            <AppHeader />
+            <main>
+                <ErrorBoundary>
+                    <RandomChar />
+                </ErrorBoundary>
+                <div className="char__content">
                     <ErrorBoundary>
-                        <RandomChar />
+                        <CharList onCharSelected={onCharSelected} />
                     </ErrorBoundary>
-                    <div className="char__content">
-                        <ErrorBoundary>
-                            <CharList onCharSelected={onCharSelected} />
-                        </ErrorBoundary>
-                        <ErrorBoundary>
-                            <CharInfo charId={selectedChar} />
-                        </ErrorBoundary>
-                    </div>
-                    <img className="bg-decoration" src={decoration} alt="vision" />
-                </main>
-            </div>
-        )
+                    <ErrorBoundary>
+                        <CharInfo charId={selectedChar} />
+                    </ErrorBoundary>
+                </div>
+                <img className="bg-decoration" src={decoration} alt="vision" />
+            </main>
+        </div>
+    )
 }
 
 export default App;
