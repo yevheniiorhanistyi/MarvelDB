@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -43,11 +44,11 @@ const ComicsList = () => {
 
             return (
                 <li className="comics__item" key={item.id}>
-                    <a href={item.homepage} target="_blank" rel="noopener noreferrer">
+                    <Link to={`/comics/${item.id}`} rel="noopener noreferrer">
                         <img src={item.thumbnail} alt="ultimate war" className="comics__item-img" />
                         <div className="comics__item-name">{item.title}</div>
                         <div className="comics__item-price">{item.price}$</div>
-                    </a>
+                    </Link>
                 </li>
             )
         });
