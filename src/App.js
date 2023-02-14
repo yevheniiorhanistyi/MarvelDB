@@ -6,8 +6,10 @@ import Spinner from "./components/spinner/Spinner";
 
 const Main = lazy(() => import(/* webpackChunkName: "Main" */'./pages/Main'));
 const Comics = lazy(() => import(/* webpackChunkName: "Comics" */'./pages/Comics'));
-const SingleComic = lazy(() => import(/* webpackChunkName: "SingleComic" */'./pages/SingleComic'));
+const SingleComicLayout = lazy(() => import(/* webpackChunkName: "SingleComic" */'./pages/SingleComicLayout'));
 const Page404 = lazy(() => import(/* webpackChunkName: "Page404" */'./pages/404'));
+const SingleCharacterLayout = lazy(() => import('./pages/singleCharacterLayout/SingleCharacterLayout'));
+const SinglePage = lazy(() => import('./pages/SinglePage'));
 
 const App = () => {
 
@@ -29,7 +31,12 @@ const App = () => {
                         } />
                         <Route path="/comics/:id" element={
                             <Suspense fallback={<Spinner />}>
-                                <SingleComic />
+                                <SinglePage Component={SingleComicLayout} dataType='comic' />
+                            </Suspense>
+                        } />
+                        <Route path="/characters/:id" element={
+                            <Suspense fallback={<Spinner />}>
+                                <SinglePage Component={SingleCharacterLayout} dataType='character' />
                             </Suspense>
                         } />
                         <Route path="*" element={

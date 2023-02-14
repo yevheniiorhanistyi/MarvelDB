@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
@@ -17,7 +17,6 @@ const CharInfo = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.charId])
 
-
     const updateChar = () => {
         const { charId } = props;
         if (!charId) {
@@ -33,7 +32,6 @@ const CharInfo = (props) => {
     const onCharLoaded = (char) => {
         setChar(() => char);
     }
-
 
     const skeleton = char || loading || error ? null : <Skeleton />;
     const errorMessage = error ? <ErrorMessage /> : null;

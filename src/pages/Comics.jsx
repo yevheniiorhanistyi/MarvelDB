@@ -1,3 +1,4 @@
+import React from "react";
 import ComicsList from "../components/comicsList/ComicsList"
 
 const Comics = () => {
