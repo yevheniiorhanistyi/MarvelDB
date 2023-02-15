@@ -8,7 +8,7 @@ const Main = lazy(() => import(/* webpackChunkName: "Main" */'./pages/Main'));
 const Comics = lazy(() => import(/* webpackChunkName: "Comics" */'./pages/Comics'));
 const SingleComicLayout = lazy(() => import(/* webpackChunkName: "SingleComic" */'./pages/SingleComicLayout'));
 const Page404 = lazy(() => import(/* webpackChunkName: "Page404" */'./pages/404'));
-const SingleCharacterLayout = lazy(() => import('./pages/singleCharacterLayout/SingleCharacterLayout'));
+const SingleCharacterLayout = lazy(() => import('./pages/singleCharacterLayout'));
 const SinglePage = lazy(() => import('./pages/SinglePage'));
 
 const App = () => {
